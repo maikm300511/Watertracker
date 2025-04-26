@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroTrack 2.0</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><span>💧</span> HydroTrack 2.0</div>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </header>
+
+    <div class="card">
+      <h2>📊 Tagesfortschritt</h2>
+      <div class="progress-container">
+        <div class="water-bottle">
+          <div class="water" id="water"></div>
+        </div>
+        <div class="water-info">
+          <span id="currentAmount">0.0</span> / <span id="targetAmount">2.0</span> L
+        </div>
+      </div>
+
+      <div class="target-setter">
+        <label for="targetInput">Dein Tagesziel (L):</label>
+        <input type="number" id="targetInput" min="0.5" max="5" step="0.1" value="2.0"/>
+        <button id="setTarget">Speichern</button>
+      </div>
+
+      <div class="container-options">
+        <div class="container-option active" data-amount="0.2">
+          <div>🥤</div><div>200 ml</div>
+        </div>
+        <div class="container-option" data-amount="0.3">
+          <div>🥛</div><div>300 ml</div>
+        </div>
+        <div class="container-option" data-amount="0.5">
+          <div>🍶</div><div>500 ml</div>
+        </div>
+        <div class="container-option" data-amount="1">
+          <div>🍾</div><div>1000 ml</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="addWater">Wasser hinzufügen</button>
+        <button id="resetButton">Tag zurücksetzen</button>
+      </div>
+
+      <div class="reminder-toggle">
+        <label class="toggle-switch">
+          <input type="checkbox" id="reminderToggle"/>
+          <span class="slider"></span>
+        </label>
+        <span>Erinnerungen stündlich</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📝 Trinkhistorie</h2>
+      <div class="history" id="history"></div>
+    </div>
+
+    <div class="card">
+      <h2>🏆 Errungenschaften</h2>
+      <div class="badge-container">
+        <div class="badge earned"><div class="badge-icon">🌱</div><div class="badge-title">Anfänger</div></div>
+        <div class="badge"><div class="badge-icon">🌊</div><div class="badge-title">Wasser-Fan</div></div>
+        <div class="badge"><div class="badge-icon">🏆</div><div class="badge-title">Hydro-Master</div></div>
+        <div class="badge"><div class="badge-icon">🔥</div><div class="badge-title">7-Tage-Streak</div></div>
+      </div>
+      <div class="streak-display">Aktueller Streak: <span id="streakCount">0</span> Tag(e) 🔥</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
